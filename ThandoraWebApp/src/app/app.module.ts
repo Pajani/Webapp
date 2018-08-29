@@ -43,3 +43,11 @@ import {HttpClientModule} from '@angular/common/http';
   bootstrap: [AppComponent]
 })
 export class AppModule { }
+
+
+//error 405  throw while calling web api, http ok status not returned in api
+//chrome.exe --user-data-dir="C://Chrome dev session" --disable-web-security 
+///C:\Program Files (x86)\Google\Chrome\Application>chrome.exe --user-data-dir="C://Chrome dev session" --disable-web-security
+//https://www.telerik.com/forums/options-405-not-allowed-even-with-chrome-app-extension
+//ng build --prod --base-href="webapp"
+
