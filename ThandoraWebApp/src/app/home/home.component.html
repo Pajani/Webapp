@@ -1,0 +1,62 @@
+<div class="homeContainer w3-card-4" style="margin-left: 10px; width: 90%" >
+
+  <div class="w3-container " style="background:#374452; background: #006de2;" >
+    <h5>Search here </h5>
+  </div>
+  
+  <form class="w3-container"  style="background:#efefef;background: #bac5fb;" >
+  
+    <div class="labelStyle">
+  <label  >What ?</label>
+</div>
+<div class="address">
+  <input class="w3-input" type="text" placeholder="Eg. Carpenter, Electrician,..." style="font-size: 12px" [(ngModel)]="txtWhat" [ngModelOptions]="{standalone: true}" >
+</div>
+  <div class="labelStyle">
+  <label >Where ?</label>
+  </div>
+  <div class="address">
+  <input class="w3-input" type="text" placeholder="Eg. Adyar, Thiruvanmiyur..." style="font-size: 12px" [(ngModel)]="txtWhere" [ngModelOptions]="{standalone: true}">
+</div>
+  <br>
+  <button class="w3-btn w3-white  w3-round-large" style="float: right;" (click)="onSearch()" >Search</button>
+  </form>
+  
+
+  
+<div   *ngIf="api.searchList | async as user " >
+  <div   *ngFor=" let u of user  " >
+      <div class="w3-container column" >
+        
+        <div class="w3-card-4"  >
+          <header class="w3-container botdivcontainer">
+            <h5>{{u.SenderName}}  
+                <a href=""  >
+                    <i class="routebut cardmaterial-icons">
+                        directions
+                        </i>
+                      </a>
+              <a href="tel:{{u.SenderContactNo_1}}"  aria-placeholder="Call" >
+                <i class="routebut cardmaterial-icons" >
+                    phone
+                    </i>
+                  </a>
+       
+                 </h5>
+            
+          </header>
+          <div class="w3-container" style="background:#efefef">
+            <p class="address">{{u.address}}</p>
+            <hr>
+            <img src="{{u.logopath}}"  class="w3-left w3-margin-right" style="width:75px">
+            <p style="height: 60px; overflow: auto">{{u.ServiceDesc}}</p><br>
+          </div>
+          
+        </div>
+      </div>
+     </div>
+
+     
+           
+</div>      
+</div>

@@ -1,0 +1,45 @@
+<div class="homeContainer w3-card-4" style="margin-left: 10px; width: 90%" >
+
+  <div class="w3-container " style="background:#374452; background: #006de2;" >
+    <h5>Verify your mobile number  here </h5>
+  </div>
+  
+  <form class="w3-container"  style="background:#efefef;background: #bac5fb;" >
+  
+    <div class="labelStyle">
+  <label  >Mobile number ?</label>
+</div >
+
+<div class="address">
+  <input class="w3-input" type="text" placeholder="Enter mobile number " required ngModel name="txtMobile" #txtMobile="ngModel" minlength="10" maxlength="10" pattern="[0-9]*" style="font-size: 12px;float: left;"  >
+  </div>
+  <div class="errLabel" *ngIf="txtMobile.touched && !txtMobile.valid"> 
+     <div *ngIf="txtMobile.errors.required">      mobile number missing </div>
+     <div *ngIf="txtMobile.errors.pattern">     alphabets not allowed </div>
+     <div *ngIf="txtMobile.errors.minlength">     allowed only 10 digit number </div>
+
+
+</div>
+  <div class="labelStyle">
+  <input type="submit" class="w3-btn w3-white  w3-round-large" style="float: right;" (click)="ongetOTP()" value="Get OTP" >
+  </div>
+
+ <br>
+<hr>
+
+ <div *ngIf="otpclicked">
+    <div class="labelStyle">
+        <label  >Enter OTP </label>
+      </div >
+  
+      <div class="address">
+      <input class="w3-input" type="text" placeholder="Enter OTP number " style="font-size: 12px;float: left;"   >
+    </div>
+    <hr>
+    <button class="w3-btn w3-white  w3-round-large" style="float: right;" (click)="onVerify()" >Verify</button>
+</div>
+
+  </form>
+
+  </div>
+  

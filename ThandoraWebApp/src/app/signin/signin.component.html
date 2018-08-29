@@ -1,0 +1,48 @@
+
+  
+
+        <div class=" column"   *ngIf="afs.user | async as user"  style="padding-left: 20px;padding-right: 20px" >
+          <div class="card"  >
+                <div  *ngIf="afs.user | async as user"  >
+                   
+                     <img [src]="user.photoURL" alt="Avatar" style="width:100%">
+                        <h4><b>{{user.displayName}}</b></h4> 
+                     </div>
+                     <hr>
+          </div>
+     </div>
+
+  
+  
+   <div class="card" style=" padding: 54px; background-color: #bac5fb;"  >
+     
+                     <div class="userStyle"  style="box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.4);" *ngIf="!isSignedIn"  >
+              You are not logged in </div>
+                     
+                           
+              <div  *ngIf="!isSignedIn">
+
+                     <button (click)="login()" value="Signin with Google" class="buttonText" >Sign in with Google</button>
+             </div>
+             <div *ngIf="isSignedIn" >
+                      <button (click)="logout()"   value="Sign out"  >Sign Out</button>
+             </div>
+             <div *ngIf="isSignedIn && !issubscribed" >
+                     <hr>
+                     <button (click)="notifyme()" value="Allow Notification"  >Subscribe  me</button>
+             </div>
+             <div *ngIf="isSignedIn && issubscribed" >
+                     <hr>
+             <button (click)="unsubscribe()" value="Unsubscribe Notification"  >Unsubscribe me</button>
+                             </div>
+              <div  >
+                      <hr>
+                                     <button (click)="verifyMobile()" value="Verify Mobile number"  > Verify Mobile number </button>
+                </div>
+                               
+
+   </div>
+  
+
+           
+

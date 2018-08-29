@@ -1,1 +1,221 @@
 /* You can add global styles to this file, and also import other style files */
+/* You can add global styles to this file, and also import other style files */
+
+
+.material-icons {
+    //font-family: 'Material Icons';
+    font-family: 'Material Icons','Flamenco' 'Michroma' ,  sans-serif;
+    //font-family: 'Flamenco', cursive;
+    font-weight: normal;
+    font-style: normal;
+    font-size: 48px;  /* Preferred icon size */
+    display: inline-block;
+    line-height: 1;
+    text-transform: none;
+    letter-spacing: normal;
+    word-wrap: normal;
+    white-space: nowrap;
+    direction: ltr;
+   // color:#fff;
+    
+  
+    /* Support for all WebKit browsers. */
+    -webkit-font-smoothing: antialiased;
+    /* Support for Safari and Chrome. */
+    text-rendering: optimizeLegibility;
+  
+    /* Support for Firefox. */
+    -moz-osx-font-smoothing: grayscale;
+  
+    /* Support for IE. */
+    font-feature-settings: 'liga';
+  }
+  a:hover{
+        color:yellow;
+
+}
+
+body
+{
+    //background:#e51b49;
+    background-image:url('./assets/images/about-logo.png');
+    background-repeat: no-repeat ;
+    background-color: #e51b49;
+    background-position:center;
+    background-size: 70%;
+}
+
+.cardmaterial-icons {
+    font-family: 'Material Icons','Flamenco','Michroma' ,  sans-serif;
+    //font-family: 'Flamenco', cursive;
+    
+    font-weight: normal;
+    font-style: normal;
+    font-size: 32px;  /* Preferred icon size */
+    display: inline-block;
+    line-height: 1;
+    text-transform: none;
+    letter-spacing: normal;
+    word-wrap: normal;
+    white-space: nowrap;
+    direction: ltr;
+    color:#fff;
+    vertical-align:center;
+    width: 30px;
+  
+    /* Support for all WebKit browsers. */
+    -webkit-font-smoothing: antialiased;
+    /* Support for Safari and Chrome. */
+    text-rendering: optimizeLegibility;
+  
+    /* Support for Firefox. */
+    -moz-osx-font-smoothing: grayscale;
+  
+    /* Support for IE. */
+    font-feature-settings: 'liga';
+  }
+  a:hover{
+        color:yellow;
+
+}
+
+
+.topnav {
+    background-color: #333;
+    overflow: hidden;
+}
+
+/* Style the links inside the navigation bar */
+.topnav a {
+    float: left;
+    display: block;
+    color: #f2f2f2;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 17px;
+}
+
+/* Change the color of links on hover */
+.topnav a:hover {
+    background-color: #ddd;
+    color: black;
+}
+
+/* Add an active class to highlight the current page */
+.active {
+    background-color: #4CAF50;
+    color: white;
+}
+
+/* Hide the link that should open and close the topnav on small screens */
+.topnav .icon {
+    display: none;
+}
+
+p{
+    font-family: 'Flamenco',cursive;
+}
+
+.colorPrimary
+{
+    color:#e51b49;
+}
+
+
+.colorPrimaryDark
+{
+    color:#D60534;
+}
+
+.colorAccent
+{
+    color:#FF4081;
+}
+
+
+.colorGuestPrimary
+{
+    color:#ff7800;
+}
+
+.colorGuestPrimaryDark
+{
+    color:#e06a01;
+}
+
+.colorGuestAccent
+{
+    color:#F89D4D;
+}
+
+
+.tabHostUnselectedTextColor
+{
+    color:#f4a4b6;
+}
+
+
+
+
+
+
+
+/*
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+
+
+    <color name="white">#ffffff</color>
+    <color name="black">#000000</color>
+    <color name="blackish_gray">#3c3c3c</color>
+    <color name="status_bar">#d3143f</color>
+    <color name="yellow">#fbdd09</color>
+    <color name="light_gray">#f5f5f5</color>
+    <color name="verification_bg">#e0dede</color>
+    <color name="main_text_color">#616161</color>
+    <color name="sub_text_color">#9e9e9e</color>
+
+    <color name="listener_bg">#d3143f</color>
+    <color name="outline_grey">#E5E5E5</color>
+    <color name="outline_lite_grey">#E4E4E4</color>
+    <color name="orange">#F24D0B</color>
+    <color name="grey_text">#333333</color>
+    <color name="yellow_dark">#e0aa0b</color>
+    <color name="light_green">#0ef403</color>
+    <color name="image_bg_grey">#B6B6B8</color>
+
+    <color name="odd">#eee</color>
+    <color name="even">#fff</color>
+    <color name="divider">#ccc</color>
+
+    <color name="chat_my_view_color">#E3E3E3</color>
+
+
+    <color name="colorProfileBG">#343434</color>
+    <color name="colorTransparent9000">#9000</color>
+    <color name="colorGreyF4">#f4f4f4</color>
+
+    <color name="colorVeryLightGrey">#ebebeb</color>
+    <color name="colorLightGrey">#626262</color>
+    <color name="colorDarkGrey">#343434</color>
+
+    <color name="guestModePrimaryColor">#ff7800</color>
+    <color name="guestModePrimaryDarkColor">#e06a01</color>
+
+    <!-- About Screen -->
+    <color name="bgAbout">#eeeeee</color>
+    <color name="colorContent">#3a3a3a</color>
+    <color name="colorContentBold">#303030</color>
+
+    <color name="bitDarkLightGray">#939393</color>
+    <color name="post_detail_action_bg">#F5F5F5</color>
+
+    <color name="blue_color">#0889DD</color>
+    <color name="btn_bottom_edit_profile_skip">#A5A2A1</color>
+    <color name="bg_bottom_edit_profile">#323232</color>
+    <color name="btn_bottom_edit_profile_edit">#ff5722</color>
+</resources>
+
+*/
