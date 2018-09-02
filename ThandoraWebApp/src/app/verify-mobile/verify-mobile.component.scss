@@ -31,7 +31,10 @@ h1, h2, h3 {
   font-size: 12px;
 }
 
-
+.form-control.ng-touched.ng-invalid
+{
+  border:2px red solid
+}
 
 * {
   box-sizing: border-box;

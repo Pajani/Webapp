@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import {HttpClient,HttpHeaders} from '@angular/common/http';
 import { Observable,BehaviorSubject } from 'rxjs';
-import {IsearchResult} from './IsearchResult';
+import {IsearchResult,  OTPResponse, APIStatus} from './IsearchResult';
 //import {HttpClient} from 'selenium-webdriver/http'
 
 @Injectable({
@@ -11,6 +11,7 @@ export class ApiService {
 
   public _searchResultSource :   BehaviorSubject<IsearchResult[]>= new BehaviorSubject([]);
 
+  public _OTPResponsesource :  BehaviorSubject<OTPResponse>;///= new BehaviorSubject<getOTPResponse>();
    searchList: Observable<IsearchResult[]>= this._searchResultSource.asObservable(); 
 
   constructor(private api: HttpClient) {
@@ -54,5 +55,58 @@ export class ApiService {
 
      //data =>{this._searchResultSource=Observable<IsearchResult[]> data}
   }
+
+  getOTP(txtMobile:number):Observable<OTPResponse>
+  {
+    const httpOptions = {
+      headers: new HttpHeaders({
+          'Content-Type': 'application/json',
+          'Accept': 'application/json',
+          "Access-Control-Allow-Origin": "*",
+          "Access-Control-Allow-Methods": "POST"
+        }
+      )
+    };    
+
+    const body = JSON.stringify({
+
+      "deviceID": "",
+      "purpose": "CREATE",
+      "AuthorizeKey": 3,
+      "verified": "",
+      "phoneNo":txtMobile
+
+
+    });
+
+    return this.api.post <OTPResponse>('https://joinwithme.in/ThandoraAPI/api/Login',body,httpOptions)
+
+  }
+
+
+  verifyOTP(txtMobile:number, txtOtp:number,generatedotp:number):Observable<APIStatus>
+  {
+    const httpOptions = {
+      headers: new HttpHeaders({
+          'Content-Type': 'application/json',
+          'Accept': 'application/json',
+          "Access-Control-Allow-Origin": "*",
+          "Access-Control-Allow-Methods": "POST"
+        }
+      )
+    };    
+
+    const body = JSON.stringify({
+
+      "enteredotp": txtOtp,
+      "generatedotp": generatedotp,
+      "phoneNo":txtMobile
+    });
+
+    return this.api.post <APIStatus>('https://joinwithme.in/ThandoraAPI/api/Login',body,httpOptions)
+
+  }
+
+
 }
 

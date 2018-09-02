@@ -22,3 +22,26 @@ export interface IsearchResult
   postcode: string 
 
 }
+
+
+export interface OTPResponse
+{
+
+    StatusID: number,
+    StatusMsg: string ,
+    returnID:number,
+    DesctoDev:string ,
+    userType: string ,
+    OTP: number
+}
+
+
+export interface APIStatus
+{
+    StatusID: number,
+    StatusMsg: string ,
+    returnID:number,
+    DesctoDev:string ,
+    userType: string ,
+    OTP: number
+}
