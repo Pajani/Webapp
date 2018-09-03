@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 
 import {Router} from '@angular/router'
 import { AfService } from '../provider/af.service';
+import { ApiService } from '../provider/api.service';
 
 @Component({
   selector: 'app-signin',
@@ -24,7 +25,7 @@ export class SigninComponent implements OnInit {
  public issubscribed : boolean ;
   isUnsubscribed :string = 'true';
 
-  constructor(public afs: AfService , public rt: Router ) {
+  constructor(public afs: AfService , public api:ApiService, public rt: Router ) {
     //this.isSignedIn = this.afs.isLoggedin;
 
     this.afs.user.subscribe((auth)=>{ 
@@ -36,15 +37,21 @@ export class SigninComponent implements OnInit {
         
         this.user=auth;
         this.isSignedIn=false;
+
       }
       else
-      {this.isSignedIn=true;
+      {
+        this.isSignedIn=true;
+
+        this.api.googleVerify((auth.uid));
       
         this.afs.fdatabase.ref('/tokens').orderByChild('uid').equalTo(auth.uid).once('value')
         .then((snapshot) => {
             console.log(snapshot.val());
             if(snapshot.val())
-            { this.issubscribed=true}
+            { this.issubscribed=true
+              this.api.googleVerify(auth.uid); 
+            }
             else
             { this.issubscribed=false}
     
