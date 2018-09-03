@@ -18,6 +18,7 @@ import {ApiService} from './provider/api.service'
 import {AngularFireModule} from 'angularfire2'
 import {AngularFireAuthModule} from 'angularfire2/auth'
 import {HttpClientModule} from '@angular/common/http';
+import {AgmCoreModule} from '@agm/core'
 
 @NgModule({
   declarations: [
@@ -36,6 +37,9 @@ import {HttpClientModule} from '@angular/common/http';
     AppRoutingModule,
     FormsModule,
     AngularFireModule.initializeApp(environment.firebaseConfig),
+    AgmCoreModule.forRoot({
+      apiKey: 'AIzaSyBZ6qq9OJbIKvYraCIOOGqNyp_19yBXm2o'
+    }),
     AngularFireAuthModule,
     HttpClientModule
   ],
@@ -52,6 +56,7 @@ export class AppModule { }
 //ng build --prod --base-href="webapp"
 //https://github.com/Pajani/Webapp
 //Iniyan@4104
-
+//npm install @agm/core --save
+//npm install firebase angularfire2 --save
 
 

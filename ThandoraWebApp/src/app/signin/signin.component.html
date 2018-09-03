@@ -39,6 +39,11 @@
                       <hr>
                                      <button (click)="verifyMobile()" value="Verify Mobile number"  > Verify Mobile number </button>
                 </div>
+
+                <div class="card" style="color: red;border: red" *ngIf="googleSignReq">
+                        GOOGLE SIGN-IN MANDATORY 
+                        <button value="Ok." (click)="googleMandate()">Ok</button>
+                </div>
                                
 
    </div>

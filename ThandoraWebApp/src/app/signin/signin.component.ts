@@ -18,6 +18,7 @@ export class SigninComponent implements OnInit {
   public error:any;
   userName:string;
   public isSignedIn:boolean ;
+  public googleSignReq: boolean
   isSignedOut: boolean= true;
   public a:number =4;
   public b:number=5
@@ -125,8 +126,17 @@ export class SigninComponent implements OnInit {
 
   verifyMobile()
   {
-    this.rt.navigateByUrl('verify')
+    if(this.isSignedIn)    
+    {  this.rt.navigateByUrl('verify')}
+    else
+    {
+      this.googleSignReq=true;
+    }
   }
   
+  googleMandate()
+  {
+    this.googleSignReq=false;
+  }
   
 }
