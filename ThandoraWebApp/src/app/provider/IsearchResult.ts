@@ -23,6 +23,21 @@ export interface IsearchResult
 
 }
 
+export interface IPosts
+{
+
+  MessageID: number,
+  SenderID: number,
+  SenderName: string,
+  SenderContactNo_1: string,
+  msgPublished: string,
+  msgContent: string ,
+  imagePath: string,
+  msgDistributedto: string,
+  msgDistributedPlace: string
+
+}
+
 
 export interface OTPResponse
 {

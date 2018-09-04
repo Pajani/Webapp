@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import {HttpClient} from '@angular/common/http';
+import { ApiService } from '../provider/api.service';
 
 @Component({
   selector: 'app-posts',
@@ -11,7 +11,7 @@ export class PostsComponent implements OnInit {
   name = 'Angular 5';
   lat:any;
   lng:any;
-  constructor(){
+  constructor(public api:ApiService){
     if (navigator)
     {
     navigator.geolocation.getCurrentPosition( pos => {
@@ -21,6 +21,13 @@ export class PostsComponent implements OnInit {
     }
   }
   ngOnInit() {
+    this.api.getAllPosts().subscribe(data =>{
+
+      this.api.pushPosts(data);
+    } );
+  
   }
+
+  
 
 }

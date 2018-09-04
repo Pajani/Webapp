@@ -1,5 +1,42 @@
 <div>
-  lat : {{lat}}
+  lat : {{lat}} lang: {{lng}}
   <hr>
-  lang: {{lng}}
+  
 </div>
+
+
+<div   *ngIf="api.postsList | async as post " >
+  <div   *ngFor=" let u of post  " >
+      <div class="w3-container column" >
+        
+        <div class="w3-card-4"  >
+          <header class="w3-container botdivcontainer">
+            <h5>{{u.SenderName}}  
+                <a href=""  >
+                    <i class="routebut cardmaterial-icons">
+                        directions
+                        </i>
+                      </a>
+              <a href="tel:{{u.SenderContactNo_1}}"  aria-placeholder="Call" >
+                <i class="routebut cardmaterial-icons" >
+                    phone
+                    </i>
+                  </a>
+       
+                 </h5>
+            
+          </header>
+          <div class="w3-container" style="background:#efefef">
+            <p class="address">{{u.msgDistributedPlace}} - {{u.msgDistributedto}} -- {{u.msgPublished}} </p>
+            <hr>
+            <img src="{{u.imagePath}}"  class="w3-left w3-margin-right" style="width:40%">
+            <p style="height: 60px; overflow: auto">{{u.msgContent}}</p><br>
+          </div>
+          
+        </div>
+      </div>
+     </div>
+
+     
+           
+</div>      

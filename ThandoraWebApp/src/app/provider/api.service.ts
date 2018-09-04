@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import {HttpClient,HttpHeaders} from '@angular/common/http';
 import { Observable,BehaviorSubject } from 'rxjs';
-import {IsearchResult,  OTPResponse, APIStatus} from './IsearchResult';
+import {IsearchResult,  OTPResponse, APIStatus, IPosts} from './IsearchResult';
 import { AfService } from './af.service';
 //import {HttpClient} from 'selenium-webdriver/http'
 
@@ -11,9 +11,13 @@ import { AfService } from './af.service';
 export class ApiService {
   public user:any;
   public _searchResultSource :   BehaviorSubject<IsearchResult[]>= new BehaviorSubject([]);
+  searchList: Observable<IsearchResult[]>= this._searchResultSource.asObservable(); 
 
   public _OTPResponsesource :  BehaviorSubject<OTPResponse>;///= new BehaviorSubject<getOTPResponse>();
-   searchList: Observable<IsearchResult[]>= this._searchResultSource.asObservable(); 
+
+  public _postResultSource :   BehaviorSubject<IPosts[]>= new BehaviorSubject([]);
+  postsList: Observable<IPosts[]>= this._postResultSource.asObservable(); 
+
 
   constructor(public afs: AfService, private api: HttpClient) {
 
@@ -42,6 +46,13 @@ export class ApiService {
   {
     this._searchResultSource.next(data);
   } 
+
+
+  
+  pushPosts(data)
+  {
+    this._postResultSource.next(data);
+  }
 
   svcProviderSearch(txtWhat:string,txtWhere:string):Observable<IsearchResult[]>
   { 
@@ -73,6 +84,35 @@ export class ApiService {
 
      //data =>{this._searchResultSource=Observable<IsearchResult[]> data}
   }
+
+  
+  getAllPosts():Observable<IPosts[]>
+  { 
+    const httpOptions = {
+      headers: new HttpHeaders({
+          'Content-Type': 'application/json',
+          'Accept': 'application/json',
+          "Access-Control-Allow-Origin": "*",
+          "Access-Control-Allow-Methods": "POST"
+        }
+      )
+    };    
+
+    const body = JSON.stringify({
+      'ReceiverID': 100089,
+      'POSTCODE': "603103"
+      
+
+    });
+
+     return this.api.post <IPosts[]>('https://joinwithme.in/ThandoraAPI/api/GetAllPostsWebApp',body,httpOptions)
+     //.subscribe(data =>{
+     // console.log(data); 
+      //this._searchResultSource.next(data)});
+
+     //data =>{this._searchResultSource=Observable<IsearchResult[]> data}
+  }
+
 
   getOTP(txtMobile:number):Observable<OTPResponse>
   {
