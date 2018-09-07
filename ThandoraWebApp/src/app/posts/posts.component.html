@@ -1,21 +1,31 @@
-<div>
+<!--div>
   lat : {{lat}} lang: {{lng}}
   <hr>
   
-</div>
+</div-->
+<div ><h6>Recent Posts</h6></div>
+<hr>
+<!--div class="card__image " style="background-image: url(http://joinwithme.in/thandoraAPI/MessageImage/2481.jpg)" ></div-->
 
 
 <ul class="cards">
-  <li class="cards__item">
+    <div   *ngIf="api.postsList | async as post " >
+        
+  <li class="cards__item" *ngFor=" let u of post  " >
     <div class="card">
-      <div class="card__image card__image--fence"></div>
+        <p style="text-align: left;font-family: 'Courier New', Courier, monospace;font-size: .6em ">{{u.msgPublished}} {{u.msgDistributedPlace}}</p>
+      <img src="{{u.imagePath}}"  class="card__image" >
+
       <div class="card__content">
-        <div class="card__title">Flex</div>
-        <p class="card__text">This is the shorthand for flex-grow, flex-shrink and flex-basis combined. The second and third parameters (flex-shrink and flex-basis) are optional. Default is 0 1 auto. </p>
-        <button class="btn btn--block card__btn">Button</button>
+        <div class="card__title">{{u.SenderName}}</div>
+        <p class="card__text">{{u.msgContent}} </p>
+        <button class="btn btn--block card__btn">Call</button>
       </div>
+      
     </div>
   </li>
+</div>
+<!--
   <li class="cards__item">
     <div class="card">
       <div class="card__image card__image--river"></div>
@@ -46,9 +56,10 @@
       </div>
     </div>
   </li>
+  -->
 </ul>
   
-
+<!--
 <div   *ngIf="api.postsList | async as post " >
   <div   *ngFor=" let u of post  " >
       <div class="w3-container column" >
@@ -84,3 +95,4 @@
      
            
 </div>      
+-->

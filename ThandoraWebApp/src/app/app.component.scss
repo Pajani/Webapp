@@ -1,7 +1,7 @@
 .topcontainer
 {
     height:45px;
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, .4);
+  //  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, .4);
     background: #e51b49;
     //position: fixed;
 }
@@ -30,8 +30,9 @@
 .bodyContainer
 {
     margin-top: 10px;
-    margin-left: 50px;
+    margin-left: 0px;
     width: auto;
+    background: #735f62;
     //position: absolute;
 }
 

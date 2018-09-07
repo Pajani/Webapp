@@ -64,7 +64,7 @@ img {
 }
 .card {
   background-color: white;
-  border-radius: 0.25rem;
+  border-radius: 1.0rem;
   box-shadow: 0 20px 40px -14px rgba(0, 0, 0, 0.25);
   display: -webkit-box;
   display: -ms-flexbox;
@@ -150,7 +150,7 @@ img {
   
   
   
-  
+  /*
   
   /* Style the counter cards */
   .card {
@@ -163,15 +163,7 @@ img {
     background-color: #f1f1f1;
   }
 
-  .w3-white, .w3-hover-white:hover {
-    color: #fff!important;
-    background-color: #e51b49!important;
-}
-
-h1, h2, h3 {
- // font-family: 'Michroma', cursive;
-  color:#fff;
-}
+ 
 
 .homeContainer {
   //font-family: 'Michroma', cursive;
@@ -231,8 +223,8 @@ body {
 /* Style the counter cards */
 .card {
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-  padding: 16px;
-  text-align: center;
+  padding: 8px;
+  //text-align: center;
   background-color: #f1f1f1;
 }
 
@@ -255,6 +247,8 @@ h1,h2,h3,h4,h5,h6
   //font-family: 'Michroma' ,  sans-serif;
   
       font-family: 'Flamenco', cursive;
+      text-transform: uppercase;
+      color: #fff;
       
 }
 
