@@ -16,14 +16,20 @@
 
 h1, h2, h3 {
  // font-family: 'Michroma', cursive;
-  color:#fff;
+  color:#000;
 }
 
+.w3-container {
+  
+}
 .homeContainer {
   //font-family: 'Michroma', cursive;
   font-family: 'Flamenco', cursive;
 }
 
+.cardmaterial-icons {
+  color: #e51b49;
+}
 .labelStyle
 {
   padding-top: 10px;
@@ -92,7 +98,8 @@ body {
 }
 .botdivcontainer
 {
-    background:#374452;
+    background-color: #cac4c4;
+    //background:#374452;
     padding: 0px 7px;
 }
 
@@ -107,5 +114,6 @@ h1,h2,h3,h4,h5,h6
 h5{
     font-size: 1em;
     font-style: bold;
-    color: #fff;
+    color: #000;
+    text-transform: capitalize;
 }
