@@ -1,10 +1,8 @@
 import { NgModule, Component } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import {PostsComponent} from './posts/posts.component';
-import { SvcProvidersComponent} from './svc-providers/svc-providers.component';
 import { HomeComponent } from './home/home.component';
 import { SigninComponent } from './signin/signin.component';
-import { SearchResultComponent } from './search-result/search-result.component';
 import { VerifyMobileComponent } from './verify-mobile/verify-mobile.component';
 const routes: Routes = [
 
@@ -25,15 +23,6 @@ const routes: Routes = [
     component:PostsComponent
   },
   
-  {
-    path:'SvcProvider',
-    component:SearchResultComponent
-  },
-  
-  {
-    path:'searchresult',
-    component:SearchResultComponent
-  },
   {
     path:'verify',
     component:VerifyMobileComponent

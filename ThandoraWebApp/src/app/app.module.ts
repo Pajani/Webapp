@@ -5,13 +5,12 @@ import{environment} from '../environments/environment';
 import {FormsModule} from '@angular/forms'
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { BannerComponent } from './banner/banner.component';
+
 import { HomeComponent } from './home/home.component';
 import { PostsComponent } from './posts/posts.component';
-import { SearchResultComponent } from './search-result/search-result.component';
-import { SidebarComponent } from './sidebar/sidebar.component';
+
+
 import { SigninComponent } from './signin/signin.component';
-import { SvcProvidersComponent } from './svc-providers/svc-providers.component';
 import { VerifyMobileComponent } from './verify-mobile/verify-mobile.component';
 import {AfService} from './provider/af.service';
 import {ApiService} from './provider/api.service'
@@ -23,13 +22,9 @@ import {AgmCoreModule} from '@agm/core'
 @NgModule({
   declarations: [
     AppComponent,
-    BannerComponent,
     HomeComponent,
     PostsComponent,
-    SearchResultComponent,
-    SidebarComponent,
     SigninComponent,
-    SvcProvidersComponent,
     VerifyMobileComponent
   ],
   imports: [
