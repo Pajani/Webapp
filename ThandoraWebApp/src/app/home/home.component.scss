@@ -19,8 +19,38 @@ h1, h2, h3 {
   color:#000;
 }
 
-.w3-container {
+
+
+.icons {
+  font-family: 'Material Icons','Flamenco','Michroma' ,  sans-serif;
+  //font-family: 'Flamenco', cursive;
   
+  font-weight: normal;
+  font-style: normal;
+  font-size: 20px;  /* Preferred icon size */
+  display: inline-block;
+  line-height: 1;
+  text-transform: none;
+  letter-spacing: normal;
+  word-wrap: normal;
+  white-space: nowrap;
+  direction: ltr;
+  color:#e51b49;
+  vertical-align:center;
+  padding: 3px 4px;
+  
+  
+
+  /* Support for all WebKit browsers. */
+  -webkit-font-smoothing: antialiased;
+  /* Support for Safari and Chrome. */
+  text-rendering: optimizeLegibility;
+
+  /* Support for Firefox. */
+  -moz-osx-font-smoothing: grayscale;
+
+  /* Support for IE. */
+  font-feature-settings: 'liga';
 }
 .homeContainer {
   //font-family: 'Michroma', cursive;

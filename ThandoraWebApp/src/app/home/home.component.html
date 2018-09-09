@@ -11,7 +11,7 @@
   </div>
   
 
-<div class="homeContainer w3-card-4" style="margin-left: 10px; width: 90%" >
+<div class="homeContainer w3-card-4" style="margin-left: 10px; width: 100%" >
 <!--
   <div class="w3-container " style="background:#374452; background: #006de2;" >
     <h5>Search here </h5>
@@ -42,25 +42,25 @@
       <div class="w3-container column" >
         
         <div class="w3-card-4"  >
-          <header class="w3-container botdivcontainer">
-            <h5>{{u.SenderName}}  
+          <div class="w3-container botdivcontainer">
+            {{u.SenderName}}  
                 <a href=""  >
-                    <i class="routebut cardmaterial-icons">
+                    <i class="routebut icons">
                         directions
                         </i>
                       </a>
               <a href="tel:{{u.SenderContactNo_1}}"  aria-placeholder="Call" >
-                <i class="routebut cardmaterial-icons" >
+                <i class="routebut icons " >
                     phone
                     </i>
                   </a>
        
-                 </h5>
+                
             
-          </header>
+          </div>
           <div class="w3-container" style="background:#efefef">
             <p class="address">{{u.address}}</p>
-            <hr>
+    
             <img src="{{u.logopath}}"  class="w3-left w3-margin-right" style="width:75px">
             <p style="height: 60px; overflow: auto">{{u.ServiceDesc}}</p><br>
           </div>
